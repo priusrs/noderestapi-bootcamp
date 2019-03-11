@@ -24,6 +24,7 @@ const UserSchema = new mongoose.Schema({
   }
 })
 
+// Hook for the password encryption
 UserSchema.pre('save', async function (next) {
   if (!this.isModified('password')) {
     return next()
